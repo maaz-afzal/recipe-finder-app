@@ -1,4 +1,5 @@
 import { Moon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -8,21 +9,18 @@ const Navbar = () => {
           RecipeFinder
         </a>
         <div className="flex gap-2 items-center">
-          <a
-            href="/"
+          <Link
+            to={"/"}
             className="font-medium rounded-xl px-4 py-2 text-neutral-500 cursor-pointer text-sm transition-colors hover:text-red-500 bg-amber-100"
           >
             Home
-          </a>
-          <a
-            href="/favorites"
+          </Link>
+          <Link
+            to={"/favorites"}
             className="font-medium rounded-xl px-4 py-2 text-neutral-500 cursor-pointer text-sm transition-colors hover:text-red-500"
           >
             Favorites
-          </a>
-          <button className="text-gray-500 cursor-pointer rounded-xl hover:bg-gray-100 p-2 transition-colors">
-            <Moon size={22} />
-          </button>
+          </Link>
         </div>
       </div>
     </nav>

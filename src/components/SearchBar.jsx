@@ -1,8 +1,25 @@
 import { Search } from "lucide-react";
+import { useState } from "react";
 
 const SearchBar = () => {
+  const [input, setInput] = useState("");
+
+  const handleForm = (e) => {
+    e.preventDefault();
+    if (input.trim() === "") return;
+
+    setInput("");
+  };
+
+  const handleInput = (e) => {
+    setInput(e.target.value);
+  };
+
   return (
-    <form className="flex items-center gap-2 w-full max-w-2xl mx-auto">
+    <form
+      className="flex items-center gap-2 w-full max-w-2xl mx-auto"
+      onSubmit={handleForm}
+    >
       {/* Input Field */}
       <div className="relative flex-1">
         <Search
@@ -12,6 +29,8 @@ const SearchBar = () => {
 
         <input
           type="text"
+          value={input}
+          onChange={handleInput}
           placeholder="Search recipes..."
           className="w-full pl-11 pr-4 py-3 rounded-lg border border-gray-300 bg-white/80 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all duration-200"
         />
