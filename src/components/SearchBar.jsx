@@ -1,12 +1,14 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
   const [input, setInput] = useState("");
 
   const handleForm = (e) => {
     e.preventDefault();
     if (input.trim() === "") return;
+
+    onSearch(input);
 
     setInput("");
   };

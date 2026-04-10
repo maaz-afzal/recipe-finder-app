@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import RecipeGrid from "../components/RecipeGrid";
 
 const Home = () => {
+  const [query, setQuery] = useState("");
   return (
     <div className="min-h-screen">
       <section className="px-4 py-16 bg-amber-200/60">
@@ -14,19 +15,10 @@ const Home = () => {
             Search and discover recipes from around the world
           </p>
         </div>
-        <SearchBar />
+        <SearchBar onSearch={setQuery} />
       </section>
 
-      <RecipeGrid />
-
-
-      {/* <section>
-        <div className="mx-auto max-w-6xl px-4 py-16">
-          <h2 className="mb-6 text-2xl font-semibold text-gray-700 font-display font-serif">
-            Discover Recipes
-          </h2>
-        </div>
-      </section> */}
+      <RecipeGrid query={query} />
     </div>
   );
 };
