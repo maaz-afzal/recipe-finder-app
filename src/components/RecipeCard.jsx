@@ -13,7 +13,7 @@ const RecipeCard = ({ meal }) => {
       className="cursor-pointer rounded-xl shadow-sm hover:shadow-md transition duration-200 hover:scale-102"
       onClick={handleRecipeClick}
     >
-      <div className="relative h-40 rounded-t-xl overflow-hidden">
+      <div className="relative h-50 rounded-t-xl overflow-hidden">
         <img
           src={meal.strMealThumb}
           alt={meal.strMeal}

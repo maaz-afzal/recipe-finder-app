@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-import { fetchRecipes } from "./services/api";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -7,9 +5,6 @@ import Favorites from "./pages/Favorites";
 import RecipeDetail from "./pages/RecipeDetail";
 
 const App = () => {
-  useEffect(() => {
-    fetchRecipes().then((data) => console.log(data));
-  }, []);
 
   return (
     <div>
