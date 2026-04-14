@@ -1,11 +1,20 @@
 import { Heart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useFavoritesContext } from "../context/FavoritesContext";
 
 const RecipeCard = ({ meal }) => {
   const navigate = useNavigate();
 
+  const { isFavorites, addFavorite, removeFavorite } = useFavoritesContext();
+
   const handleRecipeClick = () => {
     navigate(`/recipe/${meal.idMeal}`);
+  };
+
+  const handleFavoriteClick = (e) => {
+    e.stopPropagation();
+
+    isFavorites(meal.idMeal) ? removeFavorite(meal.idMeal) : addFavorite(meal);
   };
 
   return (
@@ -24,13 +33,13 @@ const RecipeCard = ({ meal }) => {
 
         {/* Favorite Button icon */}
         <button
-          className="absolute top-2 right-2 p-2 rounded-full bg-white/80 backdrop-blur-sm transition-all duration-200 hover:bg-red-50 hover:text-red-500 active:scale-90"
-          onClick={(e) => {
-            e.stopPropagation();
-            console.log("Added to favorites:", meal.strMeal);
-          }}
+          className={`absolute top-2 right-2 p-2 rounded-full bg-white/80 backdrop-blur-sm transition-all duration-200 hover:bg-red-50 active:scale-90 ${isFavorites(meal.idMeal) ? "text-red-500" : "text-gray-500"}`}
+          onClick={handleFavoriteClick}
         >
-          <Heart size={18} />
+          <Heart
+            size={18}
+            className={isFavorites(meal.idMeal) ? "fill-red-500" : ""}
+          />
         </button>
 
         {/* Category Tag */}
