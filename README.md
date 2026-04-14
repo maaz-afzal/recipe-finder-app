@@ -1,16 +1,85 @@
-# React + Vite
+# Recipe Finder App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-featured recipe discovery app built with React — search thousands of real recipes, view detailed instructions, and save your favorites.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [maaz-afzal.github.io/recipe-finder-app](https://maaz-afzal.github.io/recipe-finder-app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Search Recipes** — Search by name using TheMealDB API
+- **Recipe Detail Page** — Ingredients, step-by-step instructions, and YouTube video link
+- **Favorites** — Save recipes with localStorage persistence (survives page refresh)
+- **Custom Hooks** — `useFetch` for data fetching, `useFavorites` for favorites logic
+- **React Router** — Multi-page navigation with dynamic routes
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+| Technology | Usage |
+|---|---|
+| React + Vite | Frontend framework |
+| Tailwind CSS | Styling |
+| React Router v6 | Client-side routing |
+| Context API | Global favorites state |
+| TheMealDB API | Recipe data |
+| localStorage | Favorites persistence |
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── Navbar.jsx
+│   ├── SearchBar.jsx
+│   ├── RecipeCard.jsx
+│   └── RecipeGrid.jsx
+├── pages/
+│   ├── Home.jsx
+│   ├── RecipeDetail.jsx
+│   └── Favorites.jsx
+├── hooks/
+│   ├── useFetch.js
+│   └── useFavorites.js
+├── services/
+│   └── api.js
+├── context/
+│   └── FavoritesContext.jsx
+└── App.jsx
+```
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/maaz-afzal/recipe-finder-app.git
+
+# Install dependencies
+cd recipe-finder-app
+npm install
+
+# Run locally
+npm run dev
+```
+
+---
+
+## 🧠 React Concepts Used
+
+- `useState` + `useEffect` — state and side effects
+- `useCallback` — memoized fetch functions to prevent infinite loops
+- `useContext` — global favorites state without prop drilling
+- `useParams` + `useNavigate` — React Router hooks
+- Custom Hooks — reusable logic separation
+
+---
+
+## 👨‍💻 Author
+
+**Maaz Afzal** — [GitHub](https://github.com/maaz-afzal) · [LinkedIn](https://linkedin.com/in/maazafzalkhan)
