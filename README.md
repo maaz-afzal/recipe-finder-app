@@ -1,3 +1,6 @@
+<img width="1897" height="1078" alt="recipe-finder" src="https://github.com/user-attachments/assets/6a3b9240-02a1-46b7-abd4-85c8299e4f7d" />
+
+
 # Recipe Finder App
 
 A full-featured recipe discovery app built with React — search thousands of real recipes, view detailed instructions, and save your favorites.
